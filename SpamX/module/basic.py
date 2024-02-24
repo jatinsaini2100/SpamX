@@ -21,9 +21,9 @@ async def ping(_, message: Message):
     end = datetime.datetime.now()
     ms = (end-start).microseconds / 1000
     try:
-        await pong_msg.edit_text(f"⌾ {TheSpamX.pingMsg} ⌾ \n\n ༝ ᴘɪɴɢ: `{ms}` ᴍs \n ༝ ᴠᴇʀsɪᴏɴ: `{TheSpamX.versions['SpamX']}`")
+        await pong_msg.edit_text(f"⌾ {TheSpamX.pingMsg} ⌾ \n\n ༝ ᴘɪɴɢ: `{ms}` ᴍs \n ༝ ᴠᴇʀsɪᴏɴ: `{TheSpamX.versions['SpamX']}` \n ༝ ᴏᴡɴᴇʀ: @poolnft")
     except:
-        await pong_msg.edit_text(f"⌾ {TheSpamX.pingMsg} ⌾ \n\n ༝ ᴘɪɴɢ: `{ms}` ᴍs \n ༝ ᴠᴇʀsɪᴏɴ: `{TheSpamX.versions['SpamX']}`")
+        await pong_msg.edit_text(f"⌾ {TheSpamX.pingMsg} ⌾ \n\n ༝ ᴘɪɴɢ: `{ms}` ᴍs \n ༝ ᴠᴇʀsɪᴏɴ: `{TheSpamX.versions['SpamX']}` \n ༝ ᴏᴡɴᴇʀ: @poolnft")
         await pong_msg.delete()
 
 @Client.on_message(
