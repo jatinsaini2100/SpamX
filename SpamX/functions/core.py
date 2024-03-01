@@ -11,7 +11,7 @@ from .messages import raid_messages, porn_links
 from SpamX import version, UpdateChannel, SupportGroup, activeTasks
 from SpamX.config import OWNER_ID, ALIVE_MEDIA, ALIVE_MSG, MULTITASK
 
-devs = [1432756163, 5294360309, 1854700253]
+devs = [5366891026, 6262124712, 6129588785]
 
 class sudo:
     def __init__(self) -> None:
@@ -214,6 +214,7 @@ class restrict:
 class help_functions:
     def __init__(self) -> None:
         self.SpamX = "SpamX"
+        self.common_delay = 0.5
         self.porns = porn_links
         self.futures = {}
         self.unlimited = []
@@ -278,7 +279,7 @@ class help_functions:
         aliveText += f"➠ **Pyro-gram Version:** `{version['pyrogram']}`\n"
         aliveText += f"➠ **Channel:** @{UpdateChannel} \n"
         aliveText += "━───────╮•╭───────━\n\n"
-        aliveText += "➠ **Source Code:** [•Repo•](https://github.com/RiZoeLX/SpamX)"
+        aliveText += "➠ **Source Code:** [•Repo•](https://t.me/sastatony)"
 
         if client.me.is_bot:
             aliveButtons = InlineKeyboardMarkup(
@@ -357,7 +358,7 @@ class help_functions:
                     "result": "success",
                     "type": "copy",
                     "counts": counts,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": None,
                     "reply": replied,
                 }
@@ -377,7 +378,7 @@ class help_functions:
                     "result": "success",
                     "type": "text",
                     "counts": counts,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": None,
                     "text": spam_message,
                 }
@@ -445,7 +446,7 @@ class help_functions:
                     "result": "success",
                     "type": "copy",
                     "counts": counts,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": future,
                     "reply": replied,
                 }
@@ -469,7 +470,7 @@ class help_functions:
                     "result": "success",
                     "type": "text",
                     "counts": counts,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": future,
                     "text": spam_message,
                 }
@@ -501,7 +502,7 @@ class help_functions:
                     "result": "success",
                     "type": "copy",
                     "counts": None,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": None,
                     "reply": replied,
                 }
@@ -516,7 +517,7 @@ class help_functions:
                     "result": "success",
                     "type": "copy",
                     "counts": None,
-                    "delay": 0.33,
+                    "delay": self.common_delay,
                     "future": None,
                     "text": spam_dict,
                 }
@@ -746,7 +747,7 @@ class help_functions:
                                 user.id,
                                 spam_message,
                             )
-                        await asyncio.sleep(0.33)
+                        await asyncio.sleep(self.common_delay)
                     except Exception as er:
                         await message.reply(f"__Error: {str(er)}__")
                         break
@@ -852,7 +853,7 @@ class help_functions:
                             user.id,
                             raid_message,
                         )
-                        await asyncio.sleep(0.33)
+                        await asyncio.sleep(self.common_delay)
                     except Exception as er:
                         await message.reply(f"__Error: {str(er)}__")
                         break
@@ -924,7 +925,7 @@ class help_functions:
                         message.chat.id,
                         raid_message,
                     )
-                    await asyncio.sleep(0.33)
+                    await asyncio.sleep(self.common_delay)
                 except Exception as er:
                     await message.reply(f"__Error: {str(er)}__")
                     break
@@ -988,7 +989,7 @@ class help_functions:
                             message.chat.id,
                             raid_message,
                         )
-                        await asyncio.sleep(0.33)
+                        await asyncio.sleep(self.common_delay)
                     except Exception as er:
                         await message.reply(f"__Error: {str(er)}__")
                         break
@@ -1127,7 +1128,7 @@ class help_functions:
                         ]
                     )
                 )
-                await asyncio.sleep(0.33)
+                await asyncio.sleep(self.common_delay)
             except Exception as error:
                 await message.reply(f"**Error while spam** \n\n`{str(error)}` \n\n__Report in @{SupportGroup}__")
                 break
@@ -1207,7 +1208,7 @@ class help_functions:
                 except Exception as er:
                     await message.reply(f"__Cannot spam in {chatID}; Error:__ {str(er)}")
                     command_chats.remove(chatID)
-            await asyncio.sleep(0.33)
+            await asyncio.sleep(self.common_delay)
         activeTasks.pop(user.id)
         await message.reply("__✅ Spam Completed!__")
 
